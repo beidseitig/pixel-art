@@ -1,0 +1,26 @@
+#color-palette {
+
+}
+
+.color {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.redBox {
+    background-color: red;
+}
+
+.greenBox {
+    background-color: green;
+}
+
+.blueBox {
+    background-color: blue;
+}
+
+.purpleBox {
+    background-color: purple;
+}
