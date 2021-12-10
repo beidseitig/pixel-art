@@ -1,5 +1,6 @@
-#color-palette {
-
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .color {
@@ -9,22 +10,6 @@
     display: inline-block;
 }
 
-.blackBox {
-    background-color: black;
-}
-
-.redBox {
-    background-color: red;
-}
-
-.greenBox {
-    background-color: green;
-}
-
-.blueBox {
-    background-color: blue;
-}
-
 .pixel {
     border: 1px solid black;
     width: 40px;
@@ -32,4 +17,8 @@
     display: inline-block;
     padding: 0;
     background-color: white;
+}
+
+.selected {
+
 }
