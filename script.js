@@ -1,4 +1,5 @@
-//Semantics
+// Minha primeira tentativa de fazer o projeto estava empacada no requisito 8, entao depois de da uma olhada no código de "GEOVANI MOURA" eu decidir refazer quase que totalmente o projeto, fazendo o minimo possível no HTML. Esse novo código teve grande inspiração no código de Geovani, mas tentei ao máximo não fazer igual, definindo minhas próprias variaveis e sem colar diretamente do código no GitHub. O código de Geovani é facil de ser compreendido e aqui deixo os créditos e méritos, além do meu agradecimento a ele. Repositório--> Geovani Moura = https://github.com/tryber/sd-019-c-project-pixels-art/pull/27/files
+
 
 const header = document.createElement('header');
 header.setAttribute('id', 'header');
@@ -7,8 +8,6 @@ document.body.appendChild(header);
 const main = document.createElement('main');
 main.setAttribute('id', 'main');
 document.body.appendChild(main);
-
-//Semantics
 
 const h1 = document.createElement('h1');
 h1.setAttribute('id', 'title');
@@ -43,6 +42,20 @@ const blueLi = document.createElement('li');
 blueLi.className = 'color';
 blueLi.style.backgroundColor = 'blue';
 paletteList.appendChild(blueLi);
+
+const clearButton = document.createElement('button');
+clearButton.setAttribute('id', 'clear-board');
+clearButton.innerText = 'Limpar'
+main.appendChild(clearButton);
+
+function clearBoard(event) {
+    const element = document.querySelectorAll('.pixel');
+    for (let i = 0; i < element.length; i += 1) {
+        element[i].style.backgroundColor = 'white';
+    }
+}
+
+clearButton.addEventListener('click', clearBoard);
 
 const pixelBoard = document.createElement('section');
 pixelBoard.setAttribute('id', 'pixel-board');
@@ -102,12 +115,13 @@ for (let i = 0; i < color.length; i += 1) {
 
 let pixels = document.querySelectorAll('.pixel');
 
-function adicionaCor(event) {
+function addColor(event) {
     const element = document.querySelector('.selected');
     const e = event.target;
     e.style.backgroundColor = element.style.backgroundColor;
 }
 
 for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].addEventListener('click', adicionaCor);
+    pixels[i].addEventListener('click', addColor);
 }
+
