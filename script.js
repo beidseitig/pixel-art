@@ -32,19 +32,30 @@ blackLi.classList.add('selected');
 blackLi.style.backgroundColor = 'black';
 paletteList.appendChild(blackLi);
 
+//Bonus 12
+function backgroundColor () {
+    const r = (Math.round(Math.random() * 255)).toString();
+    const g = (Math.round(Math.random() * 255)).toString();
+    const b = (Math.round(Math.random() * 255)).toString();
+    return ('rgb(' + r + ', ' + g + ', ' + b + ')');
+}
+
 const redLi = document.createElement('li');
 redLi.className = 'color';
-redLi.style.backgroundColor = 'red';
+// redLi.style.backgroundColor = 'red';
+redLi.style.backgroundColor = backgroundColor();
 paletteList.appendChild(redLi);
 
 const greenLi = document.createElement('li');
 greenLi.className = 'color'
-greenLi.style.backgroundColor = 'green';
+// greenLi.style.backgroundColor = 'green';
+greenLi.style.backgroundColor = backgroundColor();
 paletteList.appendChild(greenLi);
 
 const blueLi = document.createElement('li');
 blueLi.className = 'color';
-blueLi.style.backgroundColor = 'blue';
+// blueLi.style.backgroundColor = 'blue';
+blueLi.style.backgroundColor = backgroundColor();
 paletteList.appendChild(blueLi);
 
 const clearButton = document.createElement('button');
