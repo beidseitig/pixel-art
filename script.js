@@ -18,6 +18,10 @@ const paletteSection = document.createElement('section');
 paletteSection.setAttribute('id', 'paletteSection');
 main.appendChild(paletteSection);
 
+const buttonSection = document.createElement('section');
+buttonSection.setAttribute('id', 'buttonSection');
+main.appendChild(buttonSection);
+
 const paletteList = document.createElement('ul');
 paletteList.setAttribute('id', 'color-palette');
 paletteSection.appendChild(paletteList);
@@ -46,7 +50,7 @@ paletteList.appendChild(blueLi);
 const clearButton = document.createElement('button');
 clearButton.setAttribute('id', 'clear-board');
 clearButton.innerText = 'Limpar'
-main.appendChild(clearButton);
+buttonSection.appendChild(clearButton);
 
 function clearBoard(event) {
     const element = document.querySelectorAll('.pixel');
@@ -124,4 +128,34 @@ function addColor(event) {
 for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].addEventListener('click', addColor);
 }
+
+//Bonus 10
+const input = document.createElement('input');
+input.setAttribute('id', 'board-size');
+input.setAttribute('type', 'number');
+input.setAttribute('min', '1');
+input.placeholder = 'Digite um numero de 5 até 50';
+input.style.fontSize = '12px';
+buttonSection.appendChild(input);
+ 
+const sizeButton = document.createElement('button');
+sizeButton.setAttribute('id', 'generate-board');
+sizeButton.innerText = 'VQV';
+buttonSection.appendChild(sizeButton);
+
+function generateBoard () {
+    if (input.value < 5) {
+        alert('Board inválido!');
+        input.value = 5;
+    } else if (input.value > 50) {
+        alert('Board inválido!');
+        input.value = 50;
+    }
+    for (let i = 0; i < pixels.length; i += 1) {
+        pixels[i].parentNode.removeChild(pixels[i]);
+    }
+    makeBoard(input.value, input.value);
+}
+
+sizeButton.addEventListener('click', generateBoard);
 
